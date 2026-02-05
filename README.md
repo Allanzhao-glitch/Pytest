@@ -30,7 +30,28 @@ def test_answer():
 
 测试结果
 
-![](C:\Users\Allan\AppData\Roaming\marktext\images\2026-02-05-17-30-03-image.png)
+```python
+(base) PS D:\Code\Pytest> pytest.exe 
+================================================================= test session starts ==================================================================
+platform win32 -- Python 3.12.1, pytest-9.0.2, pluggy-1.6.0
+rootdir: D:\Code\Pytest
+collected 1 item                                                                                                                                        
+
+test_sample.py F                                                                                                                                  [100%]
+
+======================================================================= FAILURES =======================================================================
+_____________________________________________________________________ test_answer ______________________________________________________________________
+
+    def test_answer():
+>       assert func(3) == 5
+E       assert 4 == 5
+E        +  where 4 = func(3)
+
+test_sample.py:7: AssertionError
+=============================================================== short test summary info ================================================================ 
+FAILED test_sample.py::test_answer - assert 4 == 5
+================================================================== 1 failed in 0.08s =================================================================== 
+```
 
 [100%] 是指运行所有测试用例的整体进度。 完成后，pytest 会显示失败报告，因为 func(3) 不返回 5。
 
@@ -58,4 +79,8 @@ def test_mytest():
 
 以“安静”报告模式执行测试功能：
 
-![](C:\Users\Allan\AppData\Roaming\marktext\images\2026-02-05-17-32-02-image.png)
+```python
+(base) PS D:\Code\Pytest>  pytest -q test_sysexit.py
+.                                                                                                                                                 [100%]
+1 passed in 0.01s
+```
